@@ -1,0 +1,129 @@
+
+/* Reset & Base */
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}/*여백 제거*/
+
+html{
+  -webkit-text-size-adjust:100%;/*모바일 Safari 폰트 크기 자동확대 방지:사용자 설정100%*/
+  font-size: 100%; /* = 16px */
+}
+
+body{
+  font-family:'Noto Sans KR','Spoqa Han Sans Neo',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;
+  line-height:1.5;
+  color:#111;/*다크모드시 변경 고려*/
+  background:#fff;
+  word-break:keep-all;/*한글 줄바꿈,영문 normal*/
+  -webkit-font-smoothing:antialiased;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+  border: 0;
+}/*반응형 이미지 사이즈,이미지 여백제거*/
+
+ol,ul{
+  list-style:none;
+}/*리스트 도트 제거*/
+
+a{
+  color:inherit;
+  text-decoration:none;
+}/*링크 줄 제거, 부모 텍스트 스타일 적용 */
+
+a:focus-visible{
+  outline: 2px solid #000;
+  outline-offset: 4px;
+}/*키보드 사용자 링크 표기*/
+
+
+/*skip*/
+.skip-link{
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+.skip-link:focus-visible{
+  left: 20px;
+  top: 20px;
+  z-index: 9999;
+  padding: 10px 12px;
+  background: #000;
+  color: #fff;
+}/* 스킵 링크:키보드 사용자 tab시 표기 */
+
+/* visually hidden*/
+.visually-hidden{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);/*레거시*//*접근성 시각적 숨김*/
+  clip-path: inset(50%);/*최신*/
+  white-space: nowrap;
+}/*스크린 리더,검색 엔진 표기:필요시만 사용*/
+/* --- End Reset & Base --- */
+
+/* layout */
+.container{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section{
+  padding: 0;
+}
+
+.inner{
+  width:100%; 
+}
+
+/*header*/
+.h1_title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 3rem;              /* 80px ≒ 5rem */
+  
+  font-size: 0.75rem;        /* 12px ≒ 0.75rem */
+  font-weight: 600;
+  letter-spacing: 0.45em;   /* 자간은 em이 더 자연스러움 */
+  text-transform: uppercase;
+
+  color: #111;
+}
+
+/*content*/
+.ul_style01 li{
+  float: left;
+  width: 50%;
+}
+
+/* Footer */
+#footer{
+  display: flex;
+  align-items: center;        /* 세로 가운데 */
+  justify-content: center;    /* 가로 가운데 */
+
+  height: 3rem;               /* 높이도 살짝 축소 (80px → 64px) */
+
+  font-size: 0.6875rem;       /* 11px ≒ 0.6875rem */
+  font-weight: 400;
+  letter-spacing: 0.08em;     /* 긴 문장에 맞춰 자간 더 축소 */
+  text-transform: uppercase;
+
+  color: #444;                /* 시각적 우선순위 낮춤 */
+}
+
+#year{
+  margin: 0 0.25rem; /* 좌우 간격 */
+}
